@@ -10,7 +10,8 @@ rm /tmp/dockerSetup.sh
 sudo sed -i '14s/$/ -H tcp:\/\/0.0.0.0:4243/' /lib/systemd/system/docker.service
 # Exposes the docker API on port 4243
 sudo systemctl daemon-reload
-# Restarts the systemd manager
+# Restarts the system daemons
 sudo service docker restart
 # Restarts docker
-
+rm "$0"
+# Removes this script
